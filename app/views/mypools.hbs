@@ -1,0 +1,17 @@
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="container">
+		<span class="centered-text">
+		<h2>My pools</h2></br></br>
+		<a href="/newpool">
+			<div class="btn btn-primary" id="login-btn">
+				New pool
+			</div>
+		</a><br /></br>
+		<div class="list-group">
+			{{# each pools}}
+				<a href="/pool/{{this._id}}" class="list-group-item">{{this.descript.name}}</a>
+			  	<p align="right"><a href="/editpool/{{this._id}}" class="btn btn-success">Edit</a>
+			  	<a href="/api/poolDelete/{{this._id}}" class="btn btn-danger">X</a></p><br /><br />
+			{{/each}}
+		</div>
+	</div>

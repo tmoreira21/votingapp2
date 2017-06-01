@@ -1,0 +1,28 @@
+	<div class="container">
+		<form method="post" action="/api/newPool">
+		<span class="centered-text">
+		<h2>New Pool</h2><br /><br />
+		Name<br />
+		<input type="text" name="namepool" id="namepool" class="form-control" placeholder="pool name" required="required" /><br />
+		Options<br />
+		<input type="text" name="opt1" id="opt1" class="form-control" placeholder="option" required="required" /><br />
+		<input type="text" name="opt2" id="opt2" class="form-control" placeholder="option" required="required"  /><br />
+		<div id="moreopt" style="display:none;"></div>
+		<button type="button" class="btn btn-primary" style="width:100%;" id="addopt" name="addopt">add option</button><br /><br /><br />
+		<button type="submit" class="btn btn-success" style="width:100%;">Submit</button>
+		</span>
+		</form>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		var opt = 2;
+		$("#addopt").click(function() {
+			opt = opt + 1;
+			$( "#moreopt" ).append('<div id="x' + opt + '"><div class="input-group"><input type="text" name="opt' + opt + '" id="opt' + opt + '" class="form-control" placeholder="option"  required="required" /><span class="input-group-btn"><button class="btn btn-secondary" type="button" onClick="remdiv(\'x' + opt + '\');">X</button></span></div><br /></div>');
+			$( "#moreopt" ).css("display","block");
+		});
+		function remdiv(id){
+		    $( '#' + id ).remove();
+		}
+	</script>
