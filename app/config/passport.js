@@ -87,7 +87,7 @@ module.exports = function (passport) {
                         newUser.facebook.token = token;
                         newUser.facebook.name = profile.displayName;
                         newUser.facebook.provider = profile.provider;
-                        console.log(newUser);
+
                         newUser.save(function (err) {
                             if (err) {
                                 throw err;
